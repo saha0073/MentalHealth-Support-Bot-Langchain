@@ -25,7 +25,7 @@ MindfulBot is an AI-powered assistant designed to provide emotional support and 
 
 ## 🚀 Try the App
 
-[Coming Soon] The live application will be deployed and accessible here.
+You can test the live app here: [MindfulBot](https://mentalhealth-support-bot-langchain.streamlit.app/)
 
 ## Quick Links
 
