@@ -5,19 +5,14 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import WebBaseLoader
 from langchain_pinecone import PineconeVectorStore
 from langchain.tools import tool
-from prompts import TOOLS_VERSION_ONE
+from langchain_community.tools.tavily_search import TavilySearchResults
 
 
 class Tools:
     @staticmethod
     def setup_tools():
-        retriever_tool_web_search = create_retriever_tool(
-            GetRetriever("seedworld-whitepaper-rag"),  #
-            "seedworld-whitepaper-search",
-            TOOLS_VERSION_ONE,
-        )
-
-        tools = [retriever_tool_web_search]
+        tavily_tool = TavilySearchResults(max_results=5)
+        tools = [tavily_tool]
         return tools
     
 def GetRetriever(index_name):
