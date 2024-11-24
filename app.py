@@ -1,17 +1,18 @@
 from chat_history import chat_history_manager
 from agent import Agent
-from prompts import PROMPTS_VERSION_ONE, PROMPTS_VERSION_TWO
+from prompts import MENTAL_HEALTH_BOT_PROMPT
 from css.custom_css import inject_custom_css
 from dotenv import load_dotenv
 import streamlit as st
 import uuid
 
+# Load environment variables
 load_dotenv()
 
 # Inject custom CSS
 inject_custom_css()
 
-selected_prompt = PROMPTS_VERSION_ONE
+selected_prompt = MENTAL_HEALTH_BOT_PROMPT
 
 # Fetch the temperature if not already fetched
 if 'temperature' not in st.session_state:
@@ -26,22 +27,23 @@ if 'agent' not in st.session_state:
     st.session_state.agent = Agent(prompt_text=selected_prompt, agent_type="strategist", Temperature=st.session_state.temperature, llm_model=st.session_state.llm_model)
     st.session_state.selected_prompt = selected_prompt  
 
-# Sidebar for agent selection and displaying configuration
-st.sidebar.title("🌿 Seedbot Settings")
+# Sidebar for settings
+st.sidebar.title("🌟 MindfulBot Settings")
 
 # Add brief description and links in the sidebar
-st.sidebar.markdown("Seedworld: Immersive AAA metaverse where UGC gaming meets web3 and real-world economies, built by Seedify")
-st.sidebar.markdown("[X (Twitter)](https://x.com/SeedworldMeta)")
-st.sidebar.markdown("[Whitepaper](https://seedworld.gitbook.io/seedworld-wp)")
+st.sidebar.markdown("MindfulBot: Your supportive companion for mental wellness and emotional well-being")
+st.sidebar.markdown("[Crisis Support](https://988lifeline.org/)")
+st.sidebar.markdown("[NAMI Resources](https://www.nami.org/help)")
+st.sidebar.markdown("[Mental Health America](https://www.mhanational.org/get-involved)")
+st.sidebar.markdown("[WHO Mental Health](https://www.who.int/health-topics/mental-health)")
 
 # Display agent configuration in sidebar
 st.sidebar.subheader("🤖 Assistant Configuration")
-#first_sentence = ' '.join(st.session_state.selected_prompt.split('. ')[:1])
-first_sentence = f"""I am Seedbot, your unofficial Seedworld support assistant. I can answer any questions you have about Seedworld’s economy, gameplay, NFTs, nodes, tokens, land ownership, staking, and more, using detailed information from the Seedworld whitepaper."""
+first_sentence = f"""I am MindfulBot, your mental health support companion. I'm here to listen, support, and help you find resources for your mental well-being."""
 st.sidebar.write(f"📝 About me: {first_sentence}")
 st.sidebar.write(f"🌡️ Temperature: {st.session_state.temperature}")
 st.sidebar.write(f"🧠 Model: {st.session_state.llm_model}")
-st.sidebar.write("⚠️ Disclaimer: Responses may not be 100% accurate.")
+st.sidebar.write("⚠️ Note: I'm an AI assistant, not a replacement for professional mental health care.")
 
 
 # Initialize agent_with_chat_history in session state if not already present
@@ -50,21 +52,21 @@ if 'agent_with_chat_history' not in st.session_state:
 
 # Initialize conversation history in session state if not already present
 if "messages" not in st.session_state:
-    st.session_state["messages"] = [{"role": "assistant", "content": "Welcome, gamer! Curious about Seedworld? Ask me anything!"}]
+    st.session_state["messages"] = [{"role": "assistant", "content": "Hello! I'm MindfulBot, your mental health support companion. How are you feeling today? I'm here to listen and support you."}]
 
-st.title("🎮 Seedbot")
-st.markdown("🌐 unofficial Seedworld support assistant built on the top of Seedworld's whitepaper, may not be 100% accurate. Explore Seedworld, one question at a time 🌱")
+st.title("🌟 MindfulBot")
+st.markdown("Your supportive companion for mental wellness. I'm here to listen, support, and help you navigate mental health challenges. 💚")
 
 # Display each message in the chat
 for message in st.session_state["messages"]:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
 
-# Input area for user to type their message
-prompt = st.chat_input("Plant your idea here...")
+# Input area for user message
+prompt = st.chat_input("Share what's on your mind...")
 
 # Determine the agent descriptor
-agent_descriptor = "🌱 Seedbot"
+agent_descriptor = "🌟 MindfulBot"
 #st.markdown(f"<div class='agent-descriptor'>Chatting with {agent_descriptor}</div>", unsafe_allow_html=True)
 
 if prompt:
@@ -80,7 +82,7 @@ if prompt:
         {"input": prompt},
         config={"configurable": {"session_id": st.session_state["session_id"]}}
     )
-    agent_name = "🌱 Seedbot"
+    agent_name = "🌱 MindfulBot"
 
     response_text = response.get('output')
 
@@ -89,10 +91,10 @@ if prompt:
     # Append agent's response to the conversation history
     st.session_state.messages.append({"role": "assistant", "content": response_text})
     with st.chat_message("assistant"):
-        st.markdown(f"🌱 Seedbot: {response_text}")
+        st.markdown(f"🌱 MindfulBot: {response_text}")
 
 # Add a footer
 st.markdown("---")
-#st.markdown("🌐 Exploring the Seedworld metaverse, one question at a time.")
-#st.markdown("⚠️ Disclaimer: This is an unofficial Seedworld assistant built on Seedworld GitBook content. Responses may not always be accurate.")
+#st.markdown("💚 Your mental well-being matters. While I'm here to support you, please remember I'm an AI assistant and not a substitute for professional help.")
+#st.markdown("🆘 If you're in crisis, please contact emergency services or call/text 988 for immediate support.")
 
