@@ -1,71 +1,90 @@
-# Seedbot: Unofficial AI Assistant for Seedworld
+# MindfulBot: AI Mental Health Support Companion
 
 ## Overview
 
-Seedbot is an AI-powered assistant designed to provide information about Seedworld, a metaverse gaming platform. This unofficial chatbot leverages advanced language models and Retrieval-Augmented Generation (RAG) technology to offer accurate and context-aware responses based on the official Seedworld whitepaper.
-
-## About Seedworld
-
-Seedworld is an immersive AAA metaverse where user-generated content (UGC) gaming meets web3 and real-world economies, built by Seedify. It offers a unique blend of creation, gaming, and blockchain technology, allowing players to craft dream landscapes, engage in epic battles, and earn rewards in the form of $SWORLD tokens. The platform features various game modes, including an exciting upcoming survivor shooter game that combines third-person shooter action with base-raiding and survival mechanics [Seedworld Landing Page](https://seedworld.io/landing).
-
-## 🚀 Try the App
-
-You can test the live app here: [Seedbot AI Assistant](https://seedbot-ai-llm-assistant-ey4zmfte7jzf7cfazmeupm.streamlit.app/)
-
-## Quick Links
-
-- [Seedworld on X (Twitter)](https://x.com/SeedworldMeta)
-- [Seedworld Whitepaper](https://seedworld.gitbook.io/seedworld-wp)
-- [Seedify on X (Twitter)](https://x.com/SeedifyFund)
-
-## Sample Queries
-
-Here are some example questions you can ask Seedbot:
-
-| | |
-|:-------------------------:|:-------------------------:|
-|<img width="1604" alt="Game Modes" src="figures/gamemodes.png">  Game Modes |  <img width="1604" alt="Features" src="figures/features.png"> Features|
-|<img width="1604" alt="Currency" src="figures/currency.png"> Currency |  <img width="1604" alt="NFTs" src="figures/nfts.png"> NFTs|
+MindfulBot is an AI-powered assistant designed to provide emotional support and mental health resources. This chatbot leverages advanced language models to offer empathetic responses and helpful guidance while connecting users with professional mental health resources when needed. Using the Tavily search integration, MindfulBot can perform real-time web searches to provide up-to-date mental health resources and information.
 
 ## Features
 
-- Provides detailed information on Seedworld's:
-  - Economy and tokenomics
-  - Gameplay mechanics
-  - NFTs and digital assets
-  - Node operations
-  - Land ownership and management
-  - Staking mechanisms
-  - Web3 integration
-  - Real-world economy connections
+- Provides supportive interactions for:
+  - Anxiety and stress management
+  - Depression and mood challenges
+  - Emotional regulation
+  - Sleep difficulties
+  - Social connection challenges
+  - Work-life balance
+  - General mental wellness
+- Real-time web search capabilities:
+  - Finds current mental health resources
+  - Locates local support services
+  - Provides verified crisis hotline information
+  - Accesses up-to-date mental health guidelines
 - User-friendly chat interface
-- Context-aware responses
-- Based on the latest available Seedworld documentation
+- Crisis support information
+- Clear boundaries and professional referrals
+
+## 🚀 Try the App
+
+[Coming Soon] The live application will be deployed and accessible here.
+
+## Quick Links
+
+- [988 Suicide & Crisis Lifeline](https://988lifeline.org/)
+- [NAMI Resources](https://www.nami.org/help)
+- [Mental Health America](https://www.mhanational.org/)
+
+## Sample Interactions
+
+Here are some example conversations with MindfulBot:
+
+| | |
+|:-------------------------:|:-------------------------:|
+|<img width="1604" alt="Anxiety Support" src="figures/anxiety.png"> Anxiety Support |  <img width="1604" alt="Depression Support" src="figures/depression.png"> Depression Support|
+|<img width="1604" alt="Stress Management" src="figures/stress.png"> Stress Management |  <img width="1604" alt="Resources" src="figures/resources.png"> Resource Navigation|
 
 ## Technology Stack
 
-Seedbot is built using a modern tech stack designed for efficient natural language processing and information retrieval:
+MindfulBot is built using modern technologies for natural language processing:
 
 - Backend:
   - Python
-  - LangChain for LLM integration and agents
-  - OpenAI GPT-4o for natural language understanding and generation
-- Retrieval-Augmented Generation (RAG):
-  - Pinecone for storing vector embeddings
-  - LangChain for creating embeddings and retriever functionality
+  - LangChain for LLM integration
+  - OpenAI GPT-4 for natural language understanding
+  - Tavily API for real-time web search capabilities
 - User Interface:
   - Streamlit for creating the web-based chat interface
-- Data Collection:
-  - Beautiful Soup for web scraping Seedworld documentation
+- Additional Features:
+  - Real-time web search for up-to-date resources
+  - Crisis protocol integration
 
-This combination allows for accurate, context-aware responses while maintaining up-to-date information about the Seedworld ecosystem.
+## Setup
+
+1. Create and activate conda environment:
+
+```bash
+conda create -n mental_health_bot python=3.10
+conda activate mental_health_bot
+```
+
+2. Install requirements:
+
+```bash
+pip install -r requirements.txt
+```
+
+3. Run the application:
+
+```bash
+streamlit run app.py
+```
 
 ## Usage
 
-To run the Seedbot assistant:
-`streamlit run app.py`
 
+## Important Note
+
+MindfulBot is designed to be a supportive tool, not a replacement for professional mental health care. Always seek professional help for serious mental health concerns. In case of emergency, contact your local emergency services or call/text 988 for immediate support.
 
 ## Disclaimer
 
-Seedbot is an unofficial project and is not directly affiliated with Seedworld or Seedify. While we strive for accuracy, the information provided by Seedbot should not be considered as official statements from Seedworld. Always refer to the official Seedworld documentation for the most up-to-date and accurate information.
+While MindfulBot aims to provide support and resources, it is an AI assistant and should not be considered a substitute for professional mental health care. Always consult with qualified mental health professionals for personal medical advice.
