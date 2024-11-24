@@ -39,8 +39,8 @@ Here are some example conversations with MindfulBot:
 
 | | |
 |:-------------------------:|:-------------------------:|
-|<img width="1604" alt="Anxiety Support" src="figures/anxiety.png"> Anxiety Support |  <img width="1604" alt="Depression Support" src="figures/depression.png"> Depression Support|
-|<img width="1604" alt="Stress Management" src="figures/stress.png"> Stress Management |  <img width="1604" alt="Resources" src="figures/resources.png"> Resource Navigation|
+|<img width="1604" alt="Boston Health Support Groups" src="figures/boston_health_support_groups.png"> Boston Health Support Groups |  <img width="1604" alt="Health Crisis Hotlines Canada" src="figures/health_crisis_hotlines_canada.png"> Health Crisis Hotlines Canada|
+|<img width="1604" alt="Dealing with Stress" src="figures/dealing_with_stress.png"> Dealing with Stress |  <img width="1604" alt="Feeling Low" src="figures/someone_to_talk_to.png"> Feeling Low|
 
 ## Technology Stack
 

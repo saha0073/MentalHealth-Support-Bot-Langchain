@@ -43,7 +43,7 @@ first_sentence = f"""I am MindfulBot, your mental health support companion. I'm 
 st.sidebar.write(f"📝 About me: {first_sentence}")
 st.sidebar.write(f"🌡️ Temperature: {st.session_state.temperature}")
 st.sidebar.write(f"🧠 Model: {st.session_state.llm_model}")
-st.sidebar.write("⚠️ Note: I'm an AI assistant, not a replacement for professional mental health care.")
+st.sidebar.write("⚠️ Note: I'm an AI assistant, not a replacement for professional mental health care. 🆘 If you're in crisis, please contact emergency services or call/text 988 for immediate support.")
 
 
 # Initialize agent_with_chat_history in session state if not already present
